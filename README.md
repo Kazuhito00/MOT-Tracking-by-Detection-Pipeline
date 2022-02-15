@@ -11,6 +11,26 @@ https://user-images.githubusercontent.com/37477845/154089051-708b70c7-661a-4754-
 
 ---
 
+# Usage
+デモの実行方法は以下です。
+```bash
+python main.py
+```
+* --device<br>
+カメラデバイス番号の指定<br>
+デフォルト：0
+* --movie<br>
+動画ファイルの指定 ※指定時はカメラデバイスより優先<br>
+デフォルト：指定なし
+* --detector<br>
+Object Detectionのモデル選択<br>
+[yolox, efficientdet, ssd, centernet, nanodet, mediapipe_face, mediapipe_hand」の何れかを指定<br>
+デフォルト：yolox
+* --tracker<br>
+トラッキングアルゴリズムの選択<br>
+[motpy, bytetrack, norfair」の何れかを指定<br>
+デフォルト：bytetrack
+
 
 # Reference
 * XXXX
