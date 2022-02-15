@@ -112,7 +112,7 @@ def main():
         key = cv2.waitKey(1)
         if key == 27:  # ESC
             break
-        cv2.imshow('MOT Pipeline Sample', debug_image)
+        cv2.imshow('MOT Tracking by Detection Pipeline Sample', debug_image)
 
     cap.release()
     cv2.destroyAllWindows()
