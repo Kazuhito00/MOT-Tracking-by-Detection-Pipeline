@@ -31,6 +31,26 @@ Object Detectionのモデル選択<br>
 [motpy, bytetrack, norfair」の何れかを指定<br>
 デフォルト：bytetrack
 
+# Direcotry
+```
+│  main.py
+│  test.mp4
+├─Detector
+│  │  detector.py
+│  └─xxxxxxxx
+│      │  xxxxxxxx.py
+│      │  config.json
+│      │  LICENSE
+│      └─model
+│          xxxxxxxx.onnx
+└─Tracker
+    │  tracker.py
+    └─yyyyyyyy
+        │  yyyyyyyy.py
+        │  config.json
+        │  LICENSE
+        └─tracker
+```
 
 # Reference
 * XXXX
