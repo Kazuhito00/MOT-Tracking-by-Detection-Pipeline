@@ -1,0 +1,5 @@
+{
+    "model_path": "Detector/efficientdet/model/efficientdet_d0.onnx",
+    "input_shape": "512, 512",
+    "class_score_th": 0.5
+}

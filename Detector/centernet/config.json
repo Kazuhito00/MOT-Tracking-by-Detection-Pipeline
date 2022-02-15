@@ -1,0 +1,5 @@
+{
+    "model_path": "Detector/centernet/model/centernet_resnet50_v1_fpn_512x512.onnx",
+    "input_shape": "512, 512",
+    "class_score_th": 0.5
+}

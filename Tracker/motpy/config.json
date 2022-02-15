@@ -1,0 +1,12 @@
+{
+    "min_steps_alive": 3,
+    "max_staleness": 5,
+    "order_pos": 1,
+    "dim_pos": 2,
+    "order_size": 0,
+    "dim_size": 2,
+    "q_var_pos": 5000.0,
+    "r_var_pos": 0.1,
+    "min_iou": 0.25,
+    "multi_match_min_iou": 0.93
+}
