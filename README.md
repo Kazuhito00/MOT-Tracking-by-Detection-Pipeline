@@ -60,7 +60,7 @@ Object Detectionのモデル選択<br>
 | :--- | :--- | :--- | :--- |
 | YOLOX | [Megvii-BaseDetection/YOLOX](https://github.com/Megvii-BaseDetection/YOLOX) | Apache-2.0 | [YOLOX-ONNX-TFLite-Sample](https://github.com/Kazuhito00/YOLOX-ONNX-TFLite-Sample)にて<br>ONNX化したモデルを使用 |
 | EfficientDet | [tensorflow/models](https://github.com/tensorflow/models/tree/master/research/object_detection) | Apache-2.0 | [Object-Detection-API-TensorFlow2ONNX](https://github.com/Kazuhito00/Object-Detection-API-TensorFlow2ONNX)にて<br>ONNX化したモデルを使用 |
-| SSD | [tensorflow/models](https://github.com/tensorflow/models/tree/master/research/object_detection) | Apache-2.0 |  [Object-Detection-API-TensorFlow2ONNX](https://github.com/Kazuhito00/Object-Detection-API-TensorFlow2ONNX)にて<br>ONNX化したモデルを使用 |
+| SSD MobileNet v2 FPNLite | [tensorflow/models](https://github.com/tensorflow/models/tree/master/research/object_detection) | Apache-2.0 |  [Object-Detection-API-TensorFlow2ONNX](https://github.com/Kazuhito00/Object-Detection-API-TensorFlow2ONNX)にて<br>ONNX化したモデルを使用 |
 | CenterNet | [tensorflow/models](https://github.com/tensorflow/models/tree/master/research/object_detection) | Apache-2.0 |  [Object-Detection-API-TensorFlow2ONNX](https://github.com/Kazuhito00/Object-Detection-API-TensorFlow2ONNX)にて<br>ONNX化したモデルを使用 |
 | NanoDet | [RangiLyu/nanodet](https://github.com/RangiLyu/nanodet) | Apache-2.0 | [NanoDet-ONNX-Sample](https://github.com/Kazuhito00/NanoDet-ONNX-Sample)にて<br>ONNX化したモデルを使用 |
 | MediaPipe Face Detection | [google/mediapipe](https://github.com/google/mediapipe) | Apache-2.0 | 目、鼻、口、耳のキーポイントは未使用|
