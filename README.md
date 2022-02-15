@@ -61,14 +61,14 @@ Object Detectionのモデル選択<br>
 | SSD | [tensorflow/models](https://github.com/tensorflow/models/tree/master/research/object_detection) | Apache-2.0 |  [Object-Detection-API-TensorFlow2ONNX](https://github.com/Kazuhito00/Object-Detection-API-TensorFlow2ONNX)にて<br>ONNX化したモデルを使用 |
 | CenterNet | [tensorflow/models](https://github.com/tensorflow/models/tree/master/research/object_detection) | Apache-2.0 |  [Object-Detection-API-TensorFlow2ONNX](https://github.com/Kazuhito00/Object-Detection-API-TensorFlow2ONNX)にて<br>ONNX化したモデルを使用 |
 | NanoDet | [RangiLyu/nanodet](https://github.com/RangiLyu/nanodet) | Apache-2.0 | [NanoDet-ONNX-Sample](https://github.com/Kazuhito00/NanoDet-ONNX-Sample)にて<br>ONNX化したモデルを使用 |
-| MediaPipe Face Detection | [google/mediapipe](https://github.com/google/mediapipe) | Apache-2.0 | - |
-| MediaPipe Hands | [google/mediapipe](https://github.com/google/mediapipe) | Apache-2.0 | - |
+| MediaPipe Face Detection | [google/mediapipe](https://github.com/google/mediapipe) | Apache-2.0 | 目、鼻、口、耳のキーポイントは未使用|
+| MediaPipe Hands | [google/mediapipe](https://github.com/google/mediapipe) | Apache-2.0 | ランドマークから外接矩形を算出し使用 |
 
 # Tracker
 
 | アルゴリズム名 | 取得元リポジトリ | ライセンス | 備考 |
 | :--- | :--- | :--- | :--- |
-| motpy | [wmuron/motpy](https://github.com/wmuron/motpy) | MIT | - |
+| motpy | [wmuron/motpy](https://github.com/wmuron/motpy) | MIT | マルチクラス対応 |
 | ByteTrack | [ifzhang/ByteTrack](https://github.com/ifzhang/ByteTrack) | MIT | - |
 | Norfair  | [tryolabs/norfair](https://github.com/tryolabs/norfair) | MIT | - |
 
