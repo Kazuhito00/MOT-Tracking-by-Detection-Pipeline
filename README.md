@@ -1,2 +1,2 @@
 # MOT-Tracking-by-Detection-Pipeline
-<img src="https://user-images.githubusercontent.com/37477845/154083775-929dc948-88e6-438e-b522-f9b20fec28ba.png" loading="lazy" width="95%">
+<img src="https://user-images.githubusercontent.com/37477845/154084140-aa156ba7-7461-4701-8346-a1411eb08e63.png" loading="lazy" width="95%">
