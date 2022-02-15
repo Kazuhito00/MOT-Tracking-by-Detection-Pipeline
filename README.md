@@ -54,7 +54,7 @@ Object Detectionのモデル選択<br>
 
 # Detector
 
-| モデル名 | モデル取得元リポジトリ | ライセンス | 備考 |
+| モデル名 | 取得元リポジトリ | ライセンス | 備考 |
 | :--- | :--- | :--- | :--- |
 | YOLOX | [Megvii-BaseDetection/YOLOX](https://github.com/Megvii-BaseDetection/YOLOX) | Apache-2.0 | [YOLOX-ONNX-TFLite-Sample](https://github.com/Kazuhito00/YOLOX-ONNX-TFLite-Sample)にて<br>ONNX化したモデルを使用 |
 | EfficientDet | [tensorflow/models](https://github.com/tensorflow/models/tree/master/research/object_detection) | Apache-2.0 | [Object-Detection-API-TensorFlow2ONNX](https://github.com/Kazuhito00/Object-Detection-API-TensorFlow2ONNX)にて<br>ONNX化したモデルを使用 |
@@ -66,8 +66,11 @@ Object Detectionのモデル選択<br>
 
 # Tracker
 
-# Reference
-* XXXX
+| アルゴリズム名 | 取得元リポジトリ | ライセンス | 備考 |
+| :--- | :--- | :--- | :--- |
+| motpy | [wmuron/motpy](https://github.com/wmuron/motpy) | MIT | - |
+| ByteTrack | [ifzhang/ByteTrack](https://github.com/ifzhang/ByteTrack) | MIT | - |
+| Norfair  | [tryolabs/norfair](https://github.com/tryolabs/norfair) | MIT | - |
 
 # Author
 高橋かずひと(https://twitter.com/KzhtTkhs)
@@ -79,5 +82,3 @@ MOT-Tracking-by-Detection-Pipeline is under [MIT License](LICENSE).<br><br>
 
 # License(Movie)
 サンプル動画は[NHKクリエイティブ・ライブラリー](https://www.nhk.or.jp/archives/creative/)の[イタリア ミラノの横断歩道](https://www2.nhk.or.jp/archives/creative/material/view.cgi?m=D0002011299_00000)を使用しています。
-
-
