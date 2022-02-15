@@ -1,5 +1,5 @@
 # MOT-Tracking-by-Detection-Pipeline
-Tracking-by-Detection形式のMOT(Multi Object Tracking)について、<br>DetectionとTrackingの処理を分離したフレームワークです。<br>
+Tracking-by-Detection形式のMOT(Multi Object Tracking)について、<br>DetectionとTrackingの処理を分離して寄せ集めたフレームワークです。<br>
 
 ---
 
