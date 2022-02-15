@@ -51,6 +51,8 @@ Object Detectionのモデル選択<br>
         │  LICENSE
         └─tracker
 ```
+各モデル、トラッキングアルゴリズムを格納しているディレクトリには、<br>
+ライセンス条項とコンフィグを同梱しています。
 
 # Detector
 
