@@ -1,5 +1,5 @@
 # MOT-Tracking-by-Detection-Pipeline
-Tracking-by-Detection形式のMOT(Multi Object Tracking)について、DetectionとTrackingの処理を分離したフレームワークです。<br>
+Tracking-by-Detection形式のMOT(Multi Object Tracking)について、<br>DetectionとTrackingの処理を分離したフレームワークです。<br>
 MOT-Tracking-by-Detection-Pipelineのソースコード自体は[MIT License](LICENSE)での提供ですが、<br>
 各アルゴリズムのソースコードは、それぞれのライセンスに従います。
 
