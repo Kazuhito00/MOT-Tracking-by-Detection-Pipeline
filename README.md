@@ -3,7 +3,7 @@ Tracking-by-Detection形式のMOT(Multi Object Tracking)について、<br>Detec
 
 ---
 
-<img src="https://user-images.githubusercontent.com/37477845/154084140-aa156ba7-7461-4701-8346-a1411eb08e63.png" loading="lazy" width="100%">
+<img src="https://user-images.githubusercontent.com/37477845/154173587-51b7773e-4e7b-46c0-b8a7-da2bf774edb4.png" loading="lazy" width="100%">
 
 ---
 
