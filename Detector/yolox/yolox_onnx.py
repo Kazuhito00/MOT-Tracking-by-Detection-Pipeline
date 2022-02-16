@@ -62,6 +62,9 @@ class YoloxONNX(object):
             p6=self.with_p6,
         )
 
+        if len(class_ids) > 0:
+            class_ids = class_ids + 1  # 1始まりのクラスIDに変更
+
         return bboxes, scores, class_ids
 
     def _preprocess(self, image, input_size, swap=(2, 0, 1)):
