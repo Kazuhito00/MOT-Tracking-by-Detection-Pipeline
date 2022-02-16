@@ -41,6 +41,6 @@ class MediaPipeFaceDetection(object):
 
                 scores.append(score)
                 bboxes.append([x1, y1, x2, y2])
-                class_ids.append(0)
+                class_ids.append(1)
 
         return bboxes, scores, class_ids

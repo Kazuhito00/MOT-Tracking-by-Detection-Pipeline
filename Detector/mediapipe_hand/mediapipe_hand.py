@@ -25,8 +25,6 @@ class MediaPipeHands(object):
         )
 
     def __call__(self, image):
-        image_height, image_width = image.shape[0], image.shape[1]
-
         # 前処理
         input_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
@@ -45,9 +43,9 @@ class MediaPipeHands(object):
                 bboxes.append(bbox)
                 scores.append(handedness.classification[0].score)
                 if handedness.classification[0].label == "Left":
-                    class_ids.append(0)
-                elif handedness.classification[0].label == "Right":
                     class_ids.append(1)
+                elif handedness.classification[0].label == "Right":
+                    class_ids.append(2)
 
         return bboxes, scores, class_ids
 
