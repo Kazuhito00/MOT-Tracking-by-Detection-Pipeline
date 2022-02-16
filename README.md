@@ -20,7 +20,7 @@ filterpy 1.4.5         or later ※motpyを実行する場合
 lap 0.4.0              or later ※ByteTrackを実行する場合
 Cython 0.29.27         or later ※ByteTrackを実行する場合
 cython_bbox 0.1.3      or later ※ByteTrackを実行する場合
-rich 11.2.0            or later  ※Norfairを実行する場合
+rich 11.2.0            or later ※Norfairを実行する場合
 ```
 
 ※Windowsでcython_bbox のインストールが失敗する場合は、GitHubからのインストールをお試しください(2022/02/16時点)<br>
