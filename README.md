@@ -12,18 +12,22 @@ https://user-images.githubusercontent.com/37477845/154089051-708b70c7-661a-4754-
 ---
 
 # Requirement
-* opencv-python 4.5.5 or later
-* onnxruntime 1.10.0 or later
-* mediapipe 0.8.9 or later ※MediaPipeを実行する場合
-* filterpy 1.4.5 or later ※motpyを実行する場合
-* lap 0.4.0 or later ※ByteTrackを実行する場合
-* Cython 0.29.27 or later ※ByteTrackを実行する場合
-* cython_bbox  or later ※ByteTrackを実行する場合
-* rich 11.2.0 or later ※Norfairを実行する場合
+```
+opencv-python 4.5.5.62 or later
+onnxruntime 1.10.0     or later
+mediapipe 0.8.9.1      or later ※MediaPipeを実行する場合
+filterpy 1.4.5         or later ※motpyを実行する場合
+lap 0.4.0              or later ※ByteTrackを実行する場合
+Cython 0.29.27         or later ※ByteTrackを実行する場合
+cython_bbox 0.1.3      or later ※ByteTrackを実行する場合
+rich 11.2.0            or later ※Norfairを実行する場合
+```
 
 ※Windowsでcython_bbox のインストールが失敗する場合は、GitHubからのインストールをお試しください(2022/02/16時点)<br>
 
-`pip install -e git+https://github.com/samson-wang/cython_bbox.git#egg=cython-bbox`
+```
+pip install -e git+https://github.com/samson-wang/cython_bbox.git#egg=cython-bbox
+```
 
 # Usage
 デモの実行方法は以下です。
