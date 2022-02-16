@@ -79,7 +79,7 @@ motpy, bytetrack, norfair の何れかを指定<br>
  
 # License 
 MOT-Tracking-by-Detection-Pipeline is under [MIT License](LICENSE).<br><br>
-※MOT-Tracking-by-Detection-Pipelineのソースコード自体は[MIT License](LICENSE)での提供ですが、<br>
+MOT-Tracking-by-Detection-Pipelineのソースコード自体は[MIT License](LICENSE)ですが、<br>
 各アルゴリズムのソースコードは、それぞれのライセンスに従います。<br>
 詳細は各ディレクトリ同梱のLICENSEファイルをご確認ください。
 
