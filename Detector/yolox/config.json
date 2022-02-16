@@ -1,5 +1,5 @@
 {
-    "model_path": "Detector/yolox/model/yolox_nano.onnx",
+    "model_path": "Detector/yolox/model/yolox_nano_416x416.onnx",
     "input_shape": "416, 416",
     "class_score_th": 0.3,
     "nms_th": 0.45,

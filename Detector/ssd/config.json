@@ -1,5 +1,5 @@
 {
     "model_path": "Detector/ssd/model/ssd_mobilenet_v2_fpnlite_320x320.onnx",
-    "input_shape": "320, 320",
+    "input_shape": "320,320",
     "class_score_th": 0.5
 }
