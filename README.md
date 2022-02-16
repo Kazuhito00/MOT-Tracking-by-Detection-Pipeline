@@ -80,7 +80,8 @@ motpy, bytetrack, norfair の何れかを指定<br>
 # License 
 MOT-Tracking-by-Detection-Pipeline is under [MIT License](LICENSE).<br><br>
 ※MOT-Tracking-by-Detection-Pipelineのソースコード自体は[MIT License](LICENSE)での提供ですが、<br>
-各アルゴリズムのソースコードは、それぞれのライセンスに従います。
+各アルゴリズムのソースコードは、それぞれのライセンスに従います。<br>
+詳細は各ディレクトリ同梱のLICENSEファイルをご確認ください。
 
 # License(Movie)
 サンプル動画は[NHKクリエイティブ・ライブラリー](https://www.nhk.or.jp/archives/creative/)の[イタリア ミラノの横断歩道](https://www2.nhk.or.jp/archives/creative/material/view.cgi?m=D0002011299_00000)を使用しています。
