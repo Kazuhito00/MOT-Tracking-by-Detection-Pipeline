@@ -90,6 +90,9 @@ class NanoDetONNX(object):
                 int((bboxes[i, 3] - top) * ratio_height),
                 image_height,
             )
+
+        class_ids = class_ids + 1  # 1始まりのクラスIDに変更
+
         return bboxes, scores, class_ids
 
     def _make_grid_point(self, grid_size, stride):
@@ -272,7 +275,6 @@ class NanoDetONNX(object):
                 bboxes = bboxes[indexes]
                 scores = scores[indexes]
                 class_ids = class_ids[indexes]
-            class_ids = class_ids + 1  # 1始まりのクラスIDに変更
         else:
             bboxes = np.array([])
             scores = np.array([])
