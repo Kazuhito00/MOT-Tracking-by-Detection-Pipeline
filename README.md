@@ -46,7 +46,7 @@ yolox, efficientdet, ssd, centernet, nanodet, mediapipe_face, mediapipe_hand の
 デフォルト：yolox
 * --tracker<br>
 トラッキングアルゴリズムの選択<br>
-motpy, bytetrack, norfair の何れかを指定<br>
+motpy, bytetrack, norfair, person_reid の何れかを指定<br>
 デフォルト：bytetrack
 * --target_id<br>
 トラッキング対象のクラスIDを指定<br>複数指定する場合はカンマ区切りで指定　※Noneの場合は全てを対象とする<br>
@@ -98,6 +98,7 @@ GPU推論するか否か<br>
 | motpy | [wmuron/motpy](https://github.com/wmuron/motpy) | MIT | マルチクラス対応 |
 | ByteTrack | [ifzhang/ByteTrack](https://github.com/ifzhang/ByteTrack) | MIT | - |
 | Norfair  | [tryolabs/norfair](https://github.com/tryolabs/norfair) | MIT | - |
+| person-reidentification-retail  | [openvinotoolkit/open_model_zoo](https://github.com/openvinotoolkit/open_model_zoo/blob/2020.2/models/intel/person-reidentification-retail-0300/description/person-reidentification-retail-0300.md) | Apache-2.0 | ONNXモデルは[PINTO0309/PINTO_model_zoo](https://github.com/PINTO0309/PINTO_model_zoo/tree/main/083_Person_Reidentification)から取得 |
 
 # Author
 高橋かずひと(https://twitter.com/KzhtTkhs)
