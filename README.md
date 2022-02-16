@@ -24,11 +24,11 @@ python main.py
 デフォルト：指定なし
 * --detector<br>
 Object Detectionのモデル選択<br>
-[yolox, efficientdet, ssd, centernet, nanodet, mediapipe_face, mediapipe_hand」の何れかを指定<br>
+yolox, efficientdet, ssd, centernet, nanodet, mediapipe_face, mediapipe_hand の何れかを指定<br>
 デフォルト：yolox
 * --tracker<br>
 トラッキングアルゴリズムの選択<br>
-[motpy, bytetrack, norfair」の何れかを指定<br>
+motpy, bytetrack, norfair の何れかを指定<br>
 デフォルト：bytetrack
 
 # Direcotry
