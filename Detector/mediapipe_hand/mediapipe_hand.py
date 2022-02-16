@@ -47,6 +47,10 @@ class MediaPipeHands(object):
                 elif handedness.classification[0].label == "Right":
                     class_ids.append(2)
 
+        bboxes = np.array(bboxes)
+        class_ids = np.array(class_ids)
+        scores = np.array(scores)
+
         return bboxes, scores, class_ids
 
     def _calc_bounding_box(self, image, landmarks):

@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import cv2
+import numpy as np
 import mediapipe as mp
 
 
@@ -42,5 +43,9 @@ class MediaPipeFaceDetection(object):
                 scores.append(score)
                 bboxes.append([x1, y1, x2, y2])
                 class_ids.append(1)
+
+        bboxes = np.array(bboxes)
+        class_ids = np.array(class_ids)
+        scores = np.array(scores)
 
         return bboxes, scores, class_ids
