@@ -264,9 +264,14 @@ class NanoDetONNX(object):
 
         # NMS処理後の件数確認
         if len(indexes) > 0:
-            bboxes = bboxes[indexes[:, 0]]
-            scores = scores[indexes[:, 0]]
-            class_ids = class_ids[indexes[:, 0]]
+            if indexes.ndim == 2:
+                bboxes = bboxes[indexes[:, 0]]
+                scores = scores[indexes[:, 0]]
+                class_ids = class_ids[indexes[:, 0]]
+            elif indexes.ndim == 1:
+                bboxes = bboxes[indexes]
+                scores = scores[indexes]
+                class_ids = class_ids[indexes]
         else:
             bboxes = np.array([])
             scores = np.array([])
