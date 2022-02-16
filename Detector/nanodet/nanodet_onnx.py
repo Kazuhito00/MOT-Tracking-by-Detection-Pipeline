@@ -272,6 +272,7 @@ class NanoDetONNX(object):
                 bboxes = bboxes[indexes]
                 scores = scores[indexes]
                 class_ids = class_ids[indexes]
+            class_ids = class_ids + 1  # 1始まりのクラスIDに変更
         else:
             bboxes = np.array([])
             scores = np.array([])
