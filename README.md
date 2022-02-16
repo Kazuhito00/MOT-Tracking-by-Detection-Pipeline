@@ -25,7 +25,9 @@ rich 11.2.0            or later ※Norfairを実行する場合
 
 ※Windowsでcython_bbox のインストールが失敗する場合は、GitHubからのインストールをお試しください(2022/02/16時点)<br>
 
-`pip install -e git+https://github.com/samson-wang/cython_bbox.git#egg=cython-bbox`
+```
+pip install -e git+https://github.com/samson-wang/cython_bbox.git#egg=cython-bbox
+```
 
 # Usage
 デモの実行方法は以下です。
