@@ -11,6 +11,10 @@ https://user-images.githubusercontent.com/37477845/154089051-708b70c7-661a-4754-
 
 ---
 
+# Requirement
+* OpenCV 3.4.2 or later
+* onnxruntime 1.9.0 or later
+
 # Usage
 デモの実行方法は以下です。
 ```bash
