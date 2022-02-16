@@ -1,0 +1,5 @@
+{
+    "model_path": "Tracker/person_reid/model/person-reidentification-retail-0300.onnx",
+    "input_shape": "256, 128",
+    "score_th": 0.3
+}

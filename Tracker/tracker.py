@@ -6,14 +6,18 @@ class MultiObjectTracker(object):
         self,
         tracker_name='motpy',
         fps=30,
+        use_gpu=False,
     ):
         self.fps = round(fps, 2)
         self.tracker_name = tracker_name
         self.tracker = None
         self.config = None
+        self.use_gpu = use_gpu
 
         if self.tracker_name == 'motpy':
             from Tracker.motpy.motpy import Motpy
+
+            self.use_gpu = False  # GPU使用不可
 
             with open('Tracker/motpy/config.json') as fp:
                 self.config = json.load(fp)
@@ -36,6 +40,8 @@ class MultiObjectTracker(object):
         elif self.tracker_name == 'bytetrack':
             from Tracker.bytetrack.bytetrack import ByteTrack
 
+            self.use_gpu = False  # GPU使用不可
+
             with open('Tracker/bytetrack/config.json') as fp:
                 self.config = json.load(fp)
 
@@ -52,6 +58,8 @@ class MultiObjectTracker(object):
         elif self.tracker_name == 'norfair':
             from Tracker.norfair.norfair import Norfair
 
+            self.use_gpu = False  # GPU使用不可
+
             with open('Tracker/norfair/config.json') as fp:
                 self.config = json.load(fp)
 
@@ -60,6 +68,28 @@ class MultiObjectTracker(object):
                     fps=self.fps,
                     max_distance_between_points=self.
                     config['max_distance_between_points'],
+                )
+
+        elif self.tracker_name == 'person_reid':
+            from Tracker.person_reid.person_reid import PersonReIdentification
+
+            if self.use_gpu:
+                providers = ['CUDAExecutionProvider', 'CPUExecutionProvider']
+            else:
+                providers = ['CPUExecutionProvider']
+
+            with open('Tracker/person_reid/config.json') as fp:
+                self.config = json.load(fp)
+
+            if self.config is not None:
+                self.tracker = PersonReIdentification(
+                    fps=self.fps,
+                    model_path=self.config['model_path'],
+                    input_shape=[
+                        int(i) for i in self.config['input_shape'].split(',')
+                    ],
+                    score_th=self.config['score_th'],
+                    providers=providers,
                 )
 
         else:
@@ -84,5 +114,6 @@ class MultiObjectTracker(object):
 
         print('Tracker:', self.tracker_name)
         print('FPS:', self.fps)
+        print('GPU:', self.use_gpu)
         pprint(self.config, indent=4)
         print()
