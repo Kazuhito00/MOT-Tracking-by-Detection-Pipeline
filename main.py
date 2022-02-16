@@ -33,9 +33,14 @@ def get_args():
             'motpy',
             'bytetrack',
             'norfair',
+            'person_reid',
         ],
         default='bytetrack',
     )
+
+    parser.add_argument("--target_id", type=str, default=None)
+
+    parser.add_argument('--use_gpu', action='store_true')
 
     args = parser.parse_args()
 
@@ -52,6 +57,12 @@ def main():
     detector_name = args.detector
     tracker_name = args.tracker
 
+    target_id = args.target_id
+    if target_id is not None:
+        target_id = [int(i) for i in target_id.split(',')]
+
+    use_gpu = args.use_gpu
+
     # VideoCapture初期化
     cap = cv2.VideoCapture(cap_device)
     cap_fps = cap.get(cv2.CAP_PROP_FPS)
@@ -59,12 +70,17 @@ def main():
     # Object Detection
     detector = ObjectDetector(
         detector_name,
-        providers=['CPUExecutionProvider'],
+        target_id,
+        use_gpu=use_gpu,
     )
     detector.print_info()
 
     # Multi Object Tracking
-    tracker = MultiObjectTracker(tracker_name, cap_fps)
+    tracker = MultiObjectTracker(
+        tracker_name,
+        cap_fps,
+        use_gpu=use_gpu,
+    )
     tracker.print_info()
 
     # トラッキングID保持用変数
@@ -80,14 +96,14 @@ def main():
         debug_image = copy.deepcopy(frame)
 
         # Object Detection
-        bboxes, scores, class_ids = detector(frame)
+        d_bboxes, d_scores, d_class_ids = detector(frame)
 
         # Multi Object Tracking
-        track_ids, bboxes, scores, class_ids = tracker(
+        track_ids, t_bboxes, t_scores, t_class_ids = tracker(
             frame,
-            bboxes,
-            scores,
-            class_ids,
+            d_bboxes,
+            d_scores,
+            d_class_ids,
         )
 
         # トラッキングIDと連番の紐付け
@@ -103,9 +119,9 @@ def main():
             debug_image,
             elapsed_time,
             track_ids,
-            bboxes,
-            scores,
-            class_ids,
+            t_bboxes,
+            t_scores,
+            t_class_ids,
             track_id_dict,
         )
 
@@ -148,15 +164,27 @@ def draw_debug_info(
             thickness=2,
         )
 
-        # クラスID、スコア
+        # トラックID、スコア
         score = '%.2f' % score
-        text = '%s:%s' % (str(int(class_id)), score)
+        text = 'TID:%s(%s)' % (str(int(track_id_dict[id])), str(score))
         debug_image = cv2.putText(
             debug_image,
             text,
-            (x1, y1 - 10),
+            (x1, y1 - 22),
             cv2.FONT_HERSHEY_SIMPLEX,
-            0.7,
+            0.5,
+            color,
+            thickness=2,
+        )
+
+        # クラスID
+        text = 'CID:%s' % (str(int(class_id)))
+        debug_image = cv2.putText(
+            debug_image,
+            text,
+            (x1, y1 - 8),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.5,
             color,
             thickness=2,
         )
