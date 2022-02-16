@@ -48,6 +48,13 @@ yolox, efficientdet, ssd, centernet, nanodet, mediapipe_face, mediapipe_hand の
 トラッキングアルゴリズムの選択<br>
 motpy, bytetrack, norfair の何れかを指定<br>
 デフォルト：bytetrack
+* --target_id<br>
+トラッキング対象のクラスIDを指定<br>複数指定する場合はカンマ区切りで指定　※Noneの場合は全てを対象とする<br>
+例：--target_id=1<br>例：--target_id=1,3<br>
+デフォルト：None
+* --use_gpu<br>
+GPU推論するか否か<br>
+デフォルト：指定なし
 
 # Direcotry
 ```
