@@ -34,6 +34,8 @@ class PersonReIdentification(object):
         self.feature_vectors = None
 
     def __call__(self, image, bboxes, scores, class_ids):
+        image_height, image_width = image.shape[0], image.shape[1]
+
         tracker_ids = []
         tracker_bboxes = []
         tracker_class_ids = []
@@ -41,8 +43,10 @@ class PersonReIdentification(object):
 
         for bbox, class_id in zip(bboxes, class_ids):
             # 人物切り抜き
-            xmin, ymin = int(bbox[0]), int(bbox[1])
-            xmax, ymax = int(bbox[2]), int(bbox[3])
+            xmin = int(np.clip(bbox[0], 0, image_width - 1))
+            ymin = int(np.clip(bbox[1], 0, image_height - 1))
+            xmax = int(np.clip(bbox[2], 0, image_width - 1))
+            ymax = int(np.clip(bbox[3], 0, image_height - 1))
             person_image = copy.deepcopy(image[ymin:ymax, xmin:xmax])
 
             # 前処理

@@ -1,0 +1,5 @@
+{
+    "model_path": "Tracker/sface/model/face_recognition_sface_2021dec.onnx",
+    "input_shape": "112, 112",
+    "score_th": 0.5
+}

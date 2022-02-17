@@ -92,6 +92,50 @@ class MultiObjectTracker(object):
                     providers=providers,
                 )
 
+        elif self.tracker_name == 'youtureid':
+            from Tracker.youtureid.youtureid import YoutuReID
+
+            if self.use_gpu:
+                providers = ['CUDAExecutionProvider', 'CPUExecutionProvider']
+            else:
+                providers = ['CPUExecutionProvider']
+
+            with open('Tracker/youtureid/config.json') as fp:
+                self.config = json.load(fp)
+
+            if self.config is not None:
+                self.tracker = YoutuReID(
+                    fps=self.fps,
+                    model_path=self.config['model_path'],
+                    input_shape=[
+                        int(i) for i in self.config['input_shape'].split(',')
+                    ],
+                    score_th=self.config['score_th'],
+                    providers=providers,
+                )
+
+        elif self.tracker_name == 'sface':
+            from Tracker.sface.sface import SFace
+
+            if self.use_gpu:
+                providers = ['CUDAExecutionProvider', 'CPUExecutionProvider']
+            else:
+                providers = ['CPUExecutionProvider']
+
+            with open('Tracker/sface/config.json') as fp:
+                self.config = json.load(fp)
+
+            if self.config is not None:
+                self.tracker = SFace(
+                    fps=self.fps,
+                    model_path=self.config['model_path'],
+                    input_shape=[
+                        int(i) for i in self.config['input_shape'].split(',')
+                    ],
+                    score_th=self.config['score_th'],
+                    providers=providers,
+                )
+
         else:
             raise ValueError('Invalid Tracker Name')
 

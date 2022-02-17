@@ -34,6 +34,8 @@ def get_args():
             'bytetrack',
             'norfair',
             'person_reid',
+            'youtureid',
+            'sface',
         ],
         default='bytetrack',
     )
