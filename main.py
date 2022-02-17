@@ -32,12 +32,14 @@ def get_args():
         choices=[
             'motpy',
             'bytetrack',
+            'mc_bytetrack',
             'norfair',
+            'mc_norfair',
             'person_reid',
             'youtureid',
             'sface',
         ],
-        default='bytetrack',
+        default='motpy',
     )
 
     parser.add_argument("--target_id", type=str, default=None)

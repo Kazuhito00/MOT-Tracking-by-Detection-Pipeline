@@ -55,6 +55,24 @@ class MultiObjectTracker(object):
                     mot20=self.config['mot20'],
                 )
 
+        elif self.tracker_name == 'mc_bytetrack':
+            from Tracker.bytetrack.mc_bytetrack import MultiClassByteTrack
+
+            self.use_gpu = False  # GPU使用不可
+
+            with open('Tracker/bytetrack/config.json') as fp:
+                self.config = json.load(fp)
+
+            if self.config is not None:
+                self.tracker = MultiClassByteTrack(
+                    fps=self.fps,
+                    track_thresh=self.config['track_thresh'],
+                    track_buffer=self.config['track_buffer'],
+                    match_thresh=self.config['match_thresh'],
+                    min_box_area=self.config['min_box_area'],
+                    mot20=self.config['mot20'],
+                )
+
         elif self.tracker_name == 'norfair':
             from Tracker.norfair.norfair import Norfair
 
@@ -65,6 +83,21 @@ class MultiObjectTracker(object):
 
             if self.config is not None:
                 self.tracker = Norfair(
+                    fps=self.fps,
+                    max_distance_between_points=self.
+                    config['max_distance_between_points'],
+                )
+
+        elif self.tracker_name == 'mc_norfair':
+            from Tracker.norfair.mc_norfair import MultiClassNorfair
+
+            self.use_gpu = False  # GPU使用不可
+
+            with open('Tracker/norfair/config.json') as fp:
+                self.config = json.load(fp)
+
+            if self.config is not None:
+                self.tracker = MultiClassNorfair(
                     fps=self.fps,
                     max_distance_between_points=self.
                     config['max_distance_between_points'],
