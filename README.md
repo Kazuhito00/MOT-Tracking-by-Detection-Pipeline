@@ -47,7 +47,7 @@ yolox, efficientdet, ssd, centernet, nanodet, mediapipe_face, mediapipe_hand の
 デフォルト：yolox
 * --tracker<br>
 トラッキングアルゴリズムの選択<br>
-motpy, bytetrack, norfair, person_reid、youtureid, sface の何れかを指定<br>
+motpy, bytetrack, mc_bytetrack, norfair, mc_norfair, person_reid、youtureid, sface の何れかを指定<br>
 デフォルト：bytetrack
 * --target_id<br>
 トラッキング対象のクラスIDを指定<br>複数指定する場合はカンマ区切りで指定　※Noneの場合は全てを対象とする<br>
@@ -96,9 +96,9 @@ GPU推論するか否か<br>
 
 | アルゴリズム名 | 取得元リポジトリ | ライセンス | 備考 |
 | :--- | :--- | :--- | :--- |
-| motpy | [wmuron/motpy](https://github.com/wmuron/motpy) | MIT | マルチクラス対応 |
-| ByteTrack | [ifzhang/ByteTrack](https://github.com/ifzhang/ByteTrack) | MIT | - |
-| Norfair  | [tryolabs/norfair](https://github.com/tryolabs/norfair) | MIT | - |
+| motpy | [wmuron/motpy](https://github.com/wmuron/motpy) | MIT | - |
+| ByteTrack | [ifzhang/ByteTrack](https://github.com/ifzhang/ByteTrack) | MIT | ByteTrackはシングルクラス用トラッカー<br>マルチクラス拡張版は「mc_bytetrack」を指定する |
+| Norfair  | [tryolabs/norfair](https://github.com/tryolabs/norfair) | MIT | Norfairはシングルクラス用トラッカー<br>マルチクラス拡張版は「mc_norfiar」を指定する |
 | person-reidentification-retail  | [openvinotoolkit/open_model_zoo](https://github.com/openvinotoolkit/open_model_zoo/blob/2020.2/models/intel/person-reidentification-retail-0300/description/person-reidentification-retail-0300.md) | Apache-2.0 | ONNXモデルは[PINTO0309/PINTO_model_zoo](https://github.com/PINTO0309/PINTO_model_zoo/tree/main/083_Person_Reidentification)から取得<br>※人用モデルのため使用時はtarget_idオプションでクラスを指定してください |
 | YoutuReID | [opencv/opencv_zoo](https://github.com/opencv/opencv_zoo/tree/master/models/person_reid_youtureid) | Apache-2.0 | 人用モデルのため使用時はtarget_idオプションでクラスを指定してください |
 | SFace  | [opencv/opencv_zoo](https://github.com/opencv/opencv_zoo/tree/master/models/face_recognition_sface) | Apache-2.0 | Detectorに顔検出を指定してください<br>また、SFaceは推論前に顔の角度を垂直に補正する処理を実施すべきですが、本ソースでは未対応です |
