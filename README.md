@@ -21,6 +21,7 @@ lap 0.4.0              or later ※ByteTrackを実行する場合
 Cython 0.29.27         or later ※ByteTrackを実行する場合
 cython_bbox 0.1.3      or later ※ByteTrackを実行する場合
 rich 11.2.0            or later ※Norfairを実行する場合
+gdown 4.3.0            or later ※YoutuReIDを実行する場合
 ```
 
 ※Windowsでcython_bbox のインストールが失敗する場合は、GitHubからのインストールをお試しください(2022/02/16時点)<br>
@@ -99,6 +100,8 @@ GPU推論するか否か<br>
 | ByteTrack | [ifzhang/ByteTrack](https://github.com/ifzhang/ByteTrack) | MIT | - |
 | Norfair  | [tryolabs/norfair](https://github.com/tryolabs/norfair) | MIT | - |
 | person-reidentification-retail  | [openvinotoolkit/open_model_zoo](https://github.com/openvinotoolkit/open_model_zoo/blob/2020.2/models/intel/person-reidentification-retail-0300/description/person-reidentification-retail-0300.md) | Apache-2.0 | ONNXモデルは[PINTO0309/PINTO_model_zoo](https://github.com/PINTO0309/PINTO_model_zoo/tree/main/083_Person_Reidentification)から取得<br>※人用モデルのため使用時はtarget_idオプションでクラスを指定してください |
+| YoutuReID | [opencv/opencv_zoo](https://github.com/opencv/opencv_zoo/tree/master/models/person_reid_youtureid) | Apache-2.0 | 人用モデルのため使用時はtarget_idオプションでクラスを指定してください |
+| SFace  | [opencv/opencv_zoo](https://github.com/opencv/opencv_zoo/tree/master/models/face_recognition_sface) | Apache-2.0 | 本来はSFace推論前に顔の角度を垂直に合わせる処理をすべきだが、本フレームワークでは未対応 |
 
 # Author
 高橋かずひと(https://twitter.com/KzhtTkhs)
