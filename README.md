@@ -47,7 +47,7 @@ yolox, efficientdet, ssd, centernet, nanodet, mediapipe_face, mediapipe_hand の
 デフォルト：yolox
 * --tracker<br>
 トラッキングアルゴリズムの選択<br>
-motpy, bytetrack, norfair, person_reid の何れかを指定<br>
+motpy, bytetrack, norfair, person_reid、youtureid, sface の何れかを指定<br>
 デフォルト：bytetrack
 * --target_id<br>
 トラッキング対象のクラスIDを指定<br>複数指定する場合はカンマ区切りで指定　※Noneの場合は全てを対象とする<br>
