@@ -98,7 +98,7 @@ GPU推論するか否か<br>
 | motpy | [wmuron/motpy](https://github.com/wmuron/motpy) | MIT | マルチクラス対応 |
 | ByteTrack | [ifzhang/ByteTrack](https://github.com/ifzhang/ByteTrack) | MIT | - |
 | Norfair  | [tryolabs/norfair](https://github.com/tryolabs/norfair) | MIT | - |
-| person-reidentification-retail  | [openvinotoolkit/open_model_zoo](https://github.com/openvinotoolkit/open_model_zoo/blob/2020.2/models/intel/person-reidentification-retail-0300/description/person-reidentification-retail-0300.md) | Apache-2.0 | ONNXモデルは[PINTO0309/PINTO_model_zoo](https://github.com/PINTO0309/PINTO_model_zoo/tree/main/083_Person_Reidentification)から取得<br>※人用モデルのため使用時はtarget_idオプションでクラスを指定ください |
+| person-reidentification-retail  | [openvinotoolkit/open_model_zoo](https://github.com/openvinotoolkit/open_model_zoo/blob/2020.2/models/intel/person-reidentification-retail-0300/description/person-reidentification-retail-0300.md) | Apache-2.0 | ONNXモデルは[PINTO0309/PINTO_model_zoo](https://github.com/PINTO0309/PINTO_model_zoo/tree/main/083_Person_Reidentification)から取得<br>※人用モデルのため使用時はtarget_idオプションでクラスを指定してください |
 
 # Author
 高橋かずひと(https://twitter.com/KzhtTkhs)
