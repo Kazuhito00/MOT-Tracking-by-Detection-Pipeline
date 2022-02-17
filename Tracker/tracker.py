@@ -17,7 +17,7 @@ class MultiObjectTracker(object):
         if self.tracker_name == 'motpy':
             from Tracker.motpy.motpy import Motpy
 
-            self.use_gpu = False  # GPU使用不可
+            self.use_gpu = False  # GPU菴ｿ逕ｨ荳榊庄
 
             with open('Tracker/motpy/config.json') as fp:
                 self.config = json.load(fp)
@@ -40,7 +40,7 @@ class MultiObjectTracker(object):
         elif self.tracker_name == 'bytetrack':
             from Tracker.bytetrack.bytetrack import ByteTrack
 
-            self.use_gpu = False  # GPU使用不可
+            self.use_gpu = False  # GPU菴ｿ逕ｨ荳榊庄
 
             with open('Tracker/bytetrack/config.json') as fp:
                 self.config = json.load(fp)
@@ -58,7 +58,7 @@ class MultiObjectTracker(object):
         elif self.tracker_name == 'norfair':
             from Tracker.norfair.norfair import Norfair
 
-            self.use_gpu = False  # GPU使用不可
+            self.use_gpu = False  # GPU菴ｿ逕ｨ荳榊庄
 
             with open('Tracker/norfair/config.json') as fp:
                 self.config = json.load(fp)
