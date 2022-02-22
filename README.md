@@ -96,9 +96,9 @@ GPU推論するか否か<br>
 
 | アルゴリズム名 | 取得元リポジトリ | ライセンス | 備考 |
 | :--- | :--- | :--- | :--- |
-| motpy(0.0.10) | [wmuron/motpy](https://github.com/wmuron/motpy) | MIT | - |
-| ByteTrack(2022/01/26) | [ifzhang/ByteTrack](https://github.com/ifzhang/ByteTrack) | MIT | ByteTrackはシングルクラス用トラッカー<br>マルチクラス拡張版を使用したい場合は「mc_bytetrack」を指定してください |
-| Norfair(0.4.0) | [tryolabs/norfair](https://github.com/tryolabs/norfair) | MIT | Norfairはシングルクラス用トラッカー<br>マルチクラス拡張版を使用したい場合は「mc_norfiar」を指定してください |
+| motpy<br> (0.0.10) | [wmuron/motpy](https://github.com/wmuron/motpy) | MIT | - |
+| ByteTrack<br> (2022/01/26) | [ifzhang/ByteTrack](https://github.com/ifzhang/ByteTrack) | MIT | ByteTrackはシングルクラス用トラッカー<br>マルチクラス拡張版を使用したい場合は「mc_bytetrack」を指定してください |
+| Norfair<br> (0.4.0) | [tryolabs/norfair](https://github.com/tryolabs/norfair) | MIT | Norfairはシングルクラス用トラッカー<br>マルチクラス拡張版を使用したい場合は「mc_norfiar」を指定してください |
 | person-reidentification-retail  | [openvinotoolkit/open_model_zoo](https://github.com/openvinotoolkit/open_model_zoo/blob/2020.2/models/intel/person-reidentification-retail-0300/description/person-reidentification-retail-0300.md) | Apache-2.0 | ONNXモデルは[PINTO0309/PINTO_model_zoo](https://github.com/PINTO0309/PINTO_model_zoo/tree/main/083_Person_Reidentification)から取得<br>人用モデルのため使用時はtarget_idオプションでクラスを指定してください |
 | YoutuReID | [opencv/opencv_zoo](https://github.com/opencv/opencv_zoo/tree/master/models/person_reid_youtureid) | Apache-2.0 | 人用モデルのため使用時はtarget_idオプションでクラスを指定してください |
 | SFace  | [opencv/opencv_zoo](https://github.com/opencv/opencv_zoo/tree/master/models/face_recognition_sface) | Apache-2.0 | Detectorに顔検出を指定してください<br>また、SFaceは推論前に顔の角度を垂直に補正する処理を実施すべきですが、本ソースでは未対応です |
