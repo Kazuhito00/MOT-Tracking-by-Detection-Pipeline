@@ -65,6 +65,13 @@ class YoloxONNX(object):
         if len(class_ids) > 0:
             class_ids = class_ids + 1  # 1始まりのクラスIDに変更
 
+        # スコア閾値での抽出
+        target_index = np.where(scores > self.class_score_th, True, False)
+        if len(target_index) > 0:
+            bboxes = bboxes[target_index]
+            scores = scores[target_index]
+            class_ids = class_ids[target_index]
+
         return bboxes, scores, class_ids
 
     def _preprocess(self, image, input_size, swap=(2, 0, 1)):
