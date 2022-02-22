@@ -129,7 +129,7 @@ class ObjectDetector(object):
         elif self.model_name == 'mediapipe_face':
             from Detector.mediapipe_face.mediapipe_face import MediaPipeFaceDetection
 
-            self.use_gpu = False  # GPUg—p•s‰Â
+            self.use_gpu = False  # GPUä½¿ç”¨ä¸å¯
 
             with open('Detector/mediapipe_face/config.json') as fp:
                 self.config = json.load(fp)
@@ -144,7 +144,7 @@ class ObjectDetector(object):
         elif self.model_name == 'mediapipe_hand':
             from Detector.mediapipe_hand.mediapipe_hand import MediaPipeHands
 
-            self.use_gpu = False  # GPUg—p•s‰Â
+            self.use_gpu = False  # GPUä½¿ç”¨ä¸å¯
 
             with open('Detector/mediapipe_hand/config.json') as fp:
                 self.config = json.load(fp)
@@ -167,13 +167,13 @@ class ObjectDetector(object):
         input_image = copy.deepcopy(image)
         bboxes, scores, class_ids = None, None, None
 
-        # „˜_
+        # æ¨è«–
         if self.model is not None:
             bboxes, scores, class_ids = self.model(input_image)
         else:
             raise ValueError('Model is None')
 
-        # ‘ÎÛ‚ÌƒNƒ‰ƒXID‚Å’Šo
+        # å¯¾è±¡ã®ã‚¯ãƒ©ã‚¹IDã§æŠ½å‡º
         if self.target_id is not None and len(bboxes) > 0:
             target_index = np.in1d(class_ids, np.array(self.target_id))
 
