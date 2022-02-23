@@ -66,7 +66,8 @@ class YoloxONNX(object):
             class_ids = class_ids + 1  # 1始まりのクラスIDに変更
 
         # スコア閾値での抽出
-        target_index = np.where(scores > self.class_score_th, True, False)
+        target_index = np.where(
+            np.array(scores) > self.class_score_th, True, False)
         if len(target_index) > 0:
             bboxes = bboxes[target_index]
             scores = scores[target_index]
