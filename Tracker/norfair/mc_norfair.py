@@ -10,6 +10,7 @@ def euclidean_distance(detection, tracked_object):
 
 
 class MultiClassNorfair(object):
+
     def __init__(
         self,
         fps=30,
@@ -41,8 +42,8 @@ class MultiClassNorfair(object):
             if len(target_index) == 0:
                 break
 
-            target_bboxes = bboxes[target_index]
-            target_scores = scores[target_index]
+            target_bboxes = np.array(bboxes)[target_index]
+            target_scores = np.array(scores)[target_index]
 
             # トラッカー用変数に格納
             detections = []
