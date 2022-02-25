@@ -40,7 +40,7 @@ class MultiClassNorfair(object):
             target_index = np.in1d(class_ids, np.array(int(class_id)))
 
             if len(target_index) == 0:
-                break
+                continue
 
             target_bboxes = np.array(bboxes)[target_index]
             target_scores = np.array(scores)[target_index]
