@@ -22,6 +22,7 @@ Cython 0.29.27         or later ※ByteTrackを実行する場合
 cython_bbox 0.1.3      or later ※ByteTrackを実行する場合
 rich 11.2.0            or later ※Norfairを実行する場合
 gdown 4.3.0            or later ※YoutuReIDを実行する場合
+tensorflow 2.8.0       or later ※Light Person Detectorをtfliteで実行する場合
 ```
 
 ※Windowsでcython_bbox のインストールが失敗する場合は、GitHubからのインストールをお試しください(2022/02/16時点)<br>
