@@ -43,7 +43,7 @@ python main.py
 デフォルト：指定なし
 * --detector<br>
 Object Detectionのモデル選択<br>
-yolox, efficientdet, ssd, centernet, nanodet, mediapipe_face, mediapipe_hand の何れかを指定<br>
+yolox, efficientdet, ssd, centernet, nanodet, mediapipe_face, mediapipe_hand, light_person_detector の何れかを指定<br>
 デフォルト：yolox
 * --tracker<br>
 トラッキングアルゴリズムの選択<br>
@@ -91,6 +91,7 @@ GPU推論するか否か<br>
 | NanoDet | [RangiLyu/nanodet](https://github.com/RangiLyu/nanodet) | Apache-2.0 | [NanoDet-ONNX-Sample](https://github.com/Kazuhito00/NanoDet-ONNX-Sample)にて<br>ONNX化したモデルを使用 |
 | MediaPipe Face Detection | [google/mediapipe](https://github.com/google/mediapipe) | Apache-2.0 | 目、鼻、口、耳のキーポイントは未使用|
 | MediaPipe Hands | [google/mediapipe](https://github.com/google/mediapipe) | Apache-2.0 | ランドマークから外接矩形を算出し使用 |
+| Light Person Detector | [Person-Detection-using-RaspberryPi-CPU](https://github.com/Kazuhito00/Person-Detection-using-RaspberryPi-CPU) | Apache-2.0 | - |
 
 # Tracker
 
