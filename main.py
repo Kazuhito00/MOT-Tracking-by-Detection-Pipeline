@@ -24,6 +24,7 @@ def get_args():
             'nanodet',
             'mediapipe_face',
             'mediapipe_hand',
+            'light_person_detector',
         ],
         default='yolox',
     )

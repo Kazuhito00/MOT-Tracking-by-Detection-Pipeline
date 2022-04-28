@@ -1,0 +1,7 @@
+{
+    "model_path": "Detector/light_person_detector/model/model.onnx",
+    "input_shape": "192, 192",
+    "score_th": 0.3,
+    "nms_th": 0.5,
+    "num_threads": 4
+}

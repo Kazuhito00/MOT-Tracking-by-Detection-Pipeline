@@ -5,6 +5,7 @@ import numpy as np
 
 
 class ObjectDetector(object):
+
     def __init__(
         self,
         model_name='yolox',
@@ -158,6 +159,29 @@ class ObjectDetector(object):
                     config['min_detection_confidence'],
                     min_tracking_confidence=self.
                     config['min_tracking_confidence'],
+                )
+
+        elif self.model_name == 'light_person_detector':
+            from Detector.light_person_detector.light_person_detector import LightPersonDetector
+
+            if self.use_gpu:
+                providers = ['CUDAExecutionProvider', 'CPUExecutionProvider']
+            else:
+                providers = ['CPUExecutionProvider']
+
+            with open('Detector/light_person_detector/config.json') as fp:
+                self.config = json.load(fp)
+
+            if self.config is not None:
+                self.model = LightPersonDetector(
+                    model_path=self.config['model_path'],
+                    input_shape=[
+                        int(i) for i in self.config['input_shape'].split(',')
+                    ],
+                    score_th=self.config['score_th'],
+                    nms_th=self.config['nms_th'],
+                    providers=providers,
+                    num_threads=self.config['num_threads'],
                 )
 
         else:
