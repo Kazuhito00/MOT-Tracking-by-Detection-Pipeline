@@ -8,12 +8,14 @@ from Tracker.bytetrack.tracker.byte_tracker import BYTETracker
 
 
 class dict_dot_notation(dict):
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.__dict__ = self
 
 
 class ByteTrack(object):
+
     def __init__(
         self,
         fps,
@@ -75,8 +77,7 @@ class ByteTrack(object):
         for online_target in online_targets:
             tlwh = online_target.tlwh
             track_id = online_target.track_id
-            vertical = tlwh[2] / tlwh[3] > 1.6
-            if tlwh[2] * tlwh[3] > self.min_box_area and not vertical:
+            if tlwh[2] * tlwh[3] > self.min_box_area:
                 online_tlwhs.append(
                     np.array([
                         tlwh[0], tlwh[1], tlwh[0] + tlwh[2], tlwh[1] + tlwh[3]
