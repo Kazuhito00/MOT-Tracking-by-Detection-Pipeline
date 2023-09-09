@@ -1,9 +1,9 @@
+import lap
 import numpy as np
 import scipy
-import lap
 from scipy.spatial.distance import cdist
 
-from cython_bbox import bbox_overlaps as bbox_ious
+
 # from byte_tracker.tracker import kalman_filter
 from Tracker.bytetrack.tracker import kalman_filter
 
@@ -40,9 +40,11 @@ def _indices_to_matches(cost_matrix, indices, thresh):
 
 def linear_assignment(cost_matrix, thresh):
     if cost_matrix.size == 0:
-        return np.empty((0, 2),
-                        dtype=int), tuple(range(cost_matrix.shape[0])), tuple(
-                            range(cost_matrix.shape[1]))
+        return (
+            np.empty((0, 2), dtype=int),
+            tuple(range(cost_matrix.shape[0])),
+            tuple(range(cost_matrix.shape[1])),
+        )
     matches, unmatched_a, unmatched_b = [], [], []
     cost, x, y = lap.lapjv(cost_matrix, extend_cost=True, cost_limit=thresh)
     for ix, mx in enumerate(x):
@@ -53,6 +55,43 @@ def linear_assignment(cost_matrix, thresh):
     matches = np.asarray(matches)
     return matches, unmatched_a, unmatched_b
 
+def bbox_ious(boxes, query_boxes):
+    """
+    Parameters
+    ----------
+    boxes: (N, 4) ndarray of float
+    query_boxes: (K, 4) ndarray of float
+    Returns
+    -------
+    overlaps: (N, K) ndarray of overlap between boxes and query_boxes
+    """
+    N = boxes.shape[0]
+    K = query_boxes.shape[0]
+    overlaps = np.zeros((N, K), dtype=np.float32)
+
+    for k in range(K):
+        box_area = (query_boxes[k, 2] - query_boxes[k, 0] + 1) * (
+            query_boxes[k, 3] - query_boxes[k, 1] + 1
+        )
+        for n in range(N):
+            iw = (
+                min(boxes[n, 2], query_boxes[k, 2]) -
+                max(boxes[n, 0], query_boxes[k, 0]) + 1
+            )
+            if iw > 0:
+                ih = (
+                    min(boxes[n, 3], query_boxes[k, 3]) -
+                    max(boxes[n, 1], query_boxes[k, 1]) + 1
+                )
+                if ih > 0:
+                    ua = float(
+                        (boxes[n, 2] - boxes[n, 0] + 1) *
+                        (boxes[n, 3] - boxes[n, 1] + 1) +
+                        box_area -
+                        iw * ih
+                    )
+                    overlaps[n, k] = iw * ih / ua
+    return overlaps
 
 def ious(atlbrs, btlbrs):
     """
@@ -62,12 +101,12 @@ def ious(atlbrs, btlbrs):
 
     :rtype ious np.ndarray
     """
-    ious = np.zeros((len(atlbrs), len(btlbrs)), dtype=np.float)
+    ious = np.zeros((len(atlbrs), len(btlbrs)), dtype=np.float64)
     if ious.size == 0:
         return ious
 
-    ious = bbox_ious(np.ascontiguousarray(atlbrs, dtype=np.float),
-                     np.ascontiguousarray(btlbrs, dtype=np.float))
+    ious = bbox_ious(np.ascontiguousarray(atlbrs, dtype=np.float64),
+                     np.ascontiguousarray(btlbrs, dtype=np.float64))
 
     return ious
 
