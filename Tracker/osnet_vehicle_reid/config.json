@@ -1,0 +1,5 @@
+{
+    "model_path": "Tracker/osnet_vehicle_reid/model/osnet_ain_x1_0_vehicle_reid_clean.onnx",
+    "input_shape": "208,208",
+    "score_th": 0.3
+}

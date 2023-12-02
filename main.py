@@ -39,6 +39,7 @@ def get_args():
             'person_reid',
             'youtureid',
             'sface',
+            'vehicle_reid',
         ],
         default='motpy',
     )

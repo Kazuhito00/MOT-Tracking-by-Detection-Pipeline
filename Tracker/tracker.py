@@ -169,6 +169,28 @@ class MultiObjectTracker(object):
                     providers=providers,
                 )
 
+        elif self.tracker_name == 'vehicle_reid':
+            from Tracker.osnet_vehicle_reid.osnet_vehicle_reid import OsnetVehicleReID
+
+            if self.use_gpu:
+                providers = ['CUDAExecutionProvider', 'CPUExecutionProvider']
+            else:
+                providers = ['CPUExecutionProvider']
+
+            with open('Tracker/osnet_vehicle_reid/config.json') as fp:
+                self.config = json.load(fp)
+
+            if self.config is not None:
+                self.tracker = OsnetVehicleReID(
+                    fps=self.fps,
+                    model_path=self.config['model_path'],
+                    input_shape=[
+                        int(i) for i in self.config['input_shape'].split(',')
+                    ],
+                    score_th=self.config['score_th'],
+                    providers=providers,
+                )
+
         else:
             raise ValueError('Invalid Tracker Name')
 
